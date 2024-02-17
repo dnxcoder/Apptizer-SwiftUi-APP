@@ -8,6 +8,7 @@
 import Foundation
 
 // Decodable ? when we get json from the server we will decode that into our Appetizer object
+// Identifiable ? It conformes the object Appetizer to be identifiable so can be used on elements like List()
 struct Appetizer: Decodable {
     
     let id: Int
@@ -36,5 +37,5 @@ struct MockData {
                                            carbs: 55
                                             )
     
-    static let appetizer = [sampleAppetizer, sampleAppetizer, sampleAppetizer, sampleAppetizer]
+    static let appetizers = [sampleAppetizer, sampleAppetizer, sampleAppetizer, sampleAppetizer]
 }
