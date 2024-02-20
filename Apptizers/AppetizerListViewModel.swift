@@ -12,9 +12,11 @@ final class AppetizerListViewModel: ObservableObject {
     //Published vars allow to be broadcasted
     @Published public var appetizers: [Appetizer] = []
     @Published public var alertItem: AlertItem?
+    @Published public var isLoading = false
     
     
     public func getApptizers() {
+        self.isLoading = true
         NetworkManager.shared.getAppetizers(){ result in
             
             //DispatchQueue.main.async makes the code run in the main thread
@@ -23,6 +25,7 @@ final class AppetizerListViewModel: ObservableObject {
             // we need to use DispatchQueue.main.async
             
             DispatchQueue.main.async {
+                self.isLoading = false
                 switch result {
                 case .success(let appetizers):
                     self.appetizers = appetizers
