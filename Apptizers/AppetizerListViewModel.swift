@@ -11,6 +11,7 @@ final class AppetizerListViewModel: ObservableObject {
     
     //Published vars allow to be broadcasted
     @Published public var appetizers: [Appetizer] = []
+    @Published public var alertItem: AlertItem?
     
     
     public func getApptizers() {
@@ -25,8 +26,18 @@ final class AppetizerListViewModel: ObservableObject {
                 switch result {
                 case .success(let appetizers):
                     self.appetizers = appetizers
+                    
                 case .failure(let error):
-                    print(error.localizedDescription)
+                    switch error {
+                    case .invalidData:
+                        self.alertItem = AlertContext.invalidData
+                    case .invalidURL:
+                        self.alertItem = AlertContext.invalidURL
+                    case .invalidResponse:
+                        self.alertItem = AlertContext.invalidResponse
+                    case .unableToComplete:
+                        self.alertItem = AlertContext.unableToComplete
+                    }
                 }
             }
         }
