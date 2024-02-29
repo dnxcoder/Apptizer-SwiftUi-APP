@@ -72,6 +72,7 @@
 		2B0814182B8940470018AA6F /* AppetizerListView */ = {
 			isa = PBXGroup;
 			children = (
+				2B0814292B8944F10018AA6F /* AppetizerDetailView.swift */,
 				2BB69F762B81BFD20066FCB1 /* AppetizerListViewModel.swift */,
 				2BD6AA772B802BE70060EB78 /* AppetizerListView.swift */,
 			);
@@ -143,7 +144,6 @@
 				2B0814262B8942650018AA6F /* Image */,
 				2B0814252B8942570018AA6F /* Cells */,
 				2B0814242B8942380018AA6F /* UIKit Components */,
-				2B0814292B8944F10018AA6F /* AppetizerDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
