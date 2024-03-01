@@ -13,6 +13,8 @@ final class AppetizerListViewModel: ObservableObject {
     @Published public var appetizers: [Appetizer] = []
     @Published public var alertItem: AlertItem?
     @Published public var isLoading = false
+    @Published public var isShowingDetail = false
+    @Published public var selectedAppetizer : Appetizer?
     
     
     public func getApptizers() {
